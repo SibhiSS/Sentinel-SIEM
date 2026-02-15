@@ -35,3 +35,46 @@ body{
     gap: 20px;
     padding: 20px;
 }
+.card-upload{
+    grid-column: span 4;
+}
+.events{
+    grid-column: span 2;
+}
+.wide{
+    grid-column: span 8;
+}
+.card{
+    grid-column: span 4;
+}
+.card{
+    grid-column: span 4;
+}
+.full{
+    grid-column: span 8;
+}
+.card,
+.card-upload,
+.events{
+    background: #1B2A47;
+    border-radius: 14px;
+    padding: 1.25rem;
+    border: 1px solid #2A3B5C;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.02);
+    transition: 
+     transform 0.2s ease,
+     box-shadow 0.2s ease,
+     border-color 0.2s ease;
+}
+.card:hover,
+.card-upload:hover,
+.events:hover {
+    transform: translateY(-2px);
+    border-color: rgba(79, 125, 255, 0.25);
+
+    box-shadow:
+        0 14px 40px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(79, 125, 255, 0.15);
+}
