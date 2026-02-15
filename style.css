@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 .navlogo {
     margin-right: auto;
@@ -58,7 +59,7 @@ body{
 .events{
     background: #1B2A47;
     border-radius: 14px;
-    padding: 1.25rem;
+    padding: 1rem;
     border: 1px solid #2A3B5C;
     box-shadow:
         0 10px 30px rgba(0, 0, 0, 0.45),
@@ -67,6 +68,7 @@ body{
      transform 0.2s ease,
      box-shadow 0.2s ease,
      border-color 0.2s ease;
+     min-height: 110px;
 }
 .card:hover,
 .card-upload:hover,
@@ -78,3 +80,78 @@ body{
         0 14px 40px rgba(0, 0, 0, 0.6),
         0 0 0 1px rgba(79, 125, 255, 0.15);
 }
+.events .label {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+.events h3{
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-top: 0.4rem;
+}
+.events.high {
+    border-left: 4px solid #ef4444;
+}
+
+.events.medium {
+    border-left: 4px solid #f59e0b;
+}
+
+.events.alerts {
+    border-left: 4px solid #4f7dff;
+}
+.upload-box{
+    border: 2px dashed rgba(79, 125, 255, 0.3);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+    color: var(--text-secondary);
+    margin: 1rem 0;
+    background: #1B2A47;
+    
+}
+button{
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+button.primary {
+    background: var(--blue);
+    border-color: var(--blue);
+}
+
+button:hover {
+    opacity: 0.9;
+}
+.card-upload {
+  background: #0c1729;
+}
+.card-upload h2 {
+  font-size: 1rem;
+  color: #cbd5e1;
+}
+.chart-placeholder {
+  height: 180px;
+  background: repeating-linear-gradient(
+    to top,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.04) 1px,
+    transparent 1px,
+    transparent 30px
+  );
+  border-radius: 8px;
+}
+.alert-item {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  gap: 10px;
+  padding: 6px 0;
+}
+
+.badge.high { color: #ef4444; }
+.badge.medium { color: #f59e0b; }
