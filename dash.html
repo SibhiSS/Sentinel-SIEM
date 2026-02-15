@@ -1,125 +1,169 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Sentinel SIEM</title>
-        <link rel="stylesheet" href="style.css">
-         <link rel="stylesheet" href="https://fonts.googleapis.com">
-    </head>
-    <body>
-        <nav class="navbar">
-            <a class="navlogo" href="#">
-                <img src="Sentinel Logo oonly.png" alt="Sentinel Logo" width="100" height="30">
-            </a>
-            <a class="navitem" href="#">Dashboard</a>
-            <a class="navitem" href="#">Incidents</a>
-            <a class="navitem" href="#">Upload</a>
+<html lang="en">
 
-        </nav>
-        <main class="dashboard">
-            <section class="card-upload">
-                <h2>Upload Log file</h2>
-                <div class="upload-box">
-                    <p>Drag & Drop your log file here or</p>
-                    <button>Browse</button>
-                </div>
-                <p >Supported file types: .log, .txt, .csv</p>
-                <button class="primary">Upload</button>
-            </section>
-            <section class="events">
-                <p class="label"> Total Events</p>
-                <h3>1,234</h3>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentinel SIEM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a class="navlogo" href="#">
+            <img src="Sentinel Logo oonly.png" alt="Sentinel SIEM" width="100" height="30">
+        </a>
+        <a class="navitem active" href="#">Dashboard</a>
+        <a class="navitem" href="#">Incidents</a>
+        <a class="navitem" href="#">Upload</a>
+        <a class="navitem" href="#">Settings</a>
+    </nav>
+
+    <main class="dashboard">
+
+        <section class="card-upload">
+            <h2>
+                Upload Log file
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="17 8 12 3 7 8" />
+                    <line x1="12" y1="3" x2="12" y2="15" />
+                </svg>
+            </h2>
+            <div class="upload-box">
+                <p>Drag & Drop your log file here</p>
+                <p style="font-size: 0.8rem; opacity: 0.7;">OR</p>
+                <button class="btn-outline">Browse Files</button>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Supported: .log, .txt, .csv</p>
+                <button class="btn-primary" style="width: auto;">Upload</button>
+            </div>
+        </section>
+
+        <div class="events-group">
+            <section class="events total">
+                <p class="label">Total Events</p>
+                <h3>12,543</h3>
+                <div class="stat-indicator"></div>
             </section>
             <section class="events high">
-                <p class="label"> High Severity Events</p>
-                <h3>1,234</h3>
+                <p class="label">High Severity</p>
+                <h3>142</h3>
+                <div class="stat-indicator"></div>
             </section>
             <section class="events medium">
-                <p class="label"> Medium Severity Events</p>
-                <h3>1,234</h3>
+                <p class="label">Medium Severity</p>
+                <h3>856</h3>
+                <div class="stat-indicator"></div>
             </section>
             <section class="events alerts">
-                <p class="label"> Alerts </p>
-                <h3>1,234</h3>
+                <p class="label">Active Alerts</p>
+                <h3>24</h3>
+                <div class="stat-indicator"></div>
             </section>
-            <section class="card wide">
-                <h2>Event Trend</h2>
+        </div>
 
-                <div class="chart-placeholder">
-                    <div class="grid-lines"></div>
-                </div>
-            </section>
-            <section class="card">
-                <h2>Top Event Categories</h2>
+        <section class="card wide">
+            <h2>
+                Event Trend
+                <span style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted);">Last 24 Hours</span>
+            </h2>
+            <div class="css-chart">
+                
+            </div>
+        </section>
 
-                <div class=" donut"></div>
+        <section class="card narrow">
+            <h2>Top Event Categories</h2>
+            <ul class="legend">
+                <li><span><span class="legend-dot" style="background: var(--primary);"></span>Authentication</span>
+                    <span>45%</span></li>
+                <li><span><span class="legend-dot" style="background: var(--accent);"></span>Network</span>
+                    <span>30%</span></li>
+                <li><span><span class="legend-dot" style="background: var(--success);"></span>System</span>
+                    <span>15%</span></li>
+                <li><span><span class="legend-dot" style="background: var(--danger);"></span>Malware</span>
+                    <span>5%</span></li>
+                <li><span><span class="legend-dot" style="background: var(--warning);"></span>Access</span>
+                    <span>5%</span></li>
+            </ul>
+        </section>
 
-                <ul class="legend">
-                    <li>Authentication</li>
-                    <li>Network</li>
-                    <li>System</li>
-                    <li>Malware</li>
-                    <li>Access</li>
-                </ul>
-            </section>
-            <section class="card">
-                <h2>Top Source IPs</h2>
+        <section class="card narrow">
+            <h2>Top Source IPs</h2>
+            <ul class="ip-list">
+                <li><span>192.168.1.10</span><span>245 events</span></li>
+                <li><span>10.0.0.7</span><span>180 events</span></li>
+                <li><span>203.0.113.42</span><span>132 events</span></li>
+                <li><span>172.16.0.55</span><span>98 events</span></li>
+                <li><span>10.20.1.5</span><span>45 events</span></li>
+            </ul>
+        </section>
 
-                <ul class="ip-list">
-                    <li>
-                    <span>192.168.1.10</span>
-                    <span>245 events</span>
-                    </li>
-                    <li>
-                    <span>10.0.0.7</span>
-                    <span>180 events</span>
-                    </li>
-                    <li>
-                    <span>203.0.113.42</span>
-                    <span>132 events</span>
-                    </li>
-                </ul>
-            </section>
-            <section class="card">
-                <h2>Detected Alerts (Rule-based)</h2>
+        <section class="card wide">
+            <h2>Detected Alerts</h2>
+            <div class="alert-item">
+                <span class="alert-time">13:34:32</span>
+                <span>Multiple failed login attempts from standard user account</span>
+                <span class="alert-tag tag-high">High</span>
+            </div>
+            <div class="alert-item">
+                <span class="alert-time">14:55:21</span>
+                <span>Suspicious outbound traffic detected on port 4444</span>
+                <span class="alert-tag tag-medium">Medium</span>
+            </div>
+            <div class="alert-item">
+                <span class="alert-time">15:12:05</span>
+                <span>New admin account created outside business hours</span>
+                <span class="alert-tag tag-high">High</span>
+            </div>
+        </section>
 
-                <div class="alert-item high">
-                    <span class="time">13:34:32</span>
-                    <span class="desc">Multiple failed login attempts</span>
-                    <span class="badge">High</span>
-                </div>
-
-                <div class="alert-item medium">
-                    <span class="time">14:55:21</span>
-                    <span class="desc">Suspicious activity detected</span>
-                    <span class="badge">Medium</span>
-                </div>
-            </section>
-            <section class="card full">
-                <h2>Recent Log Entries</h2>
-
-                <table>
-                    <thead>
+        <section class="card full">
+            <h2>Recent Log Entries</h2>
+            <table>
+                <thead>
                     <tr>
-                        <th>Time</th>
+                        <th style="width: 200px;">Time</th>
                         <th>Source IP</th>
+                        <th>Event</th>
                         <th>Severity</th>
                     </tr>
-                    </thead>
-                    <tbody>
+                </thead>
+                <tbody>
                     <tr>
-                        <td>2024-04-24 16:43:32</td>
-                        <td>192.168.1.20</td>
-                        <td><span class="badge high">High</span></td>
+                        <td style="color: var(--text-muted); font-family: monospace;">2024-04-24 16:43:32</td>
+                        <td style="font-family: monospace; color: var(--primary);">192.168.1.20</td>
+                        <td>Failed password for root</td>
+                        <td><span class="alert-tag tag-high">High</span></td>
                     </tr>
                     <tr>
-                        <td>2024-04-24 15:41:68</td>
-                        <td>10.0.0.17</td>
-                        <td><span class="badge medium">Medium</span></td>
+                        <td style="color: var(--text-muted); font-family: monospace;">2024-04-24 16:44:12</td>
+                        <td style="font-family: monospace; color: var(--primary);">10.0.0.17</td>
+                        <td>Connection reset by peer</td>
+                        <td><span class="alert-tag tag-medium">Medium</span></td>
                     </tr>
-                    </tbody>
-                </table>
-            </section>
+                    <tr>
+                        <td style="color: var(--text-muted); font-family: monospace;">2024-04-24 16:45:01</td>
+                        <td style="font-family: monospace; color: var(--primary);">203.0.113.11</td>
+                        <td>Invalid user admin from 203.0.113.11</td>
+                        <td><span class="alert-tag tag-high">High</span></td>
+                    </tr>
+                    <tr>
+                        <td style="color: var(--text-muted); font-family: monospace;">2024-04-24 16:48:55</td>
+                        <td style="font-family: monospace; color: var(--primary);">192.168.1.50</td>
+                        <td>Accepted publickey for ubuntu</td>
+                        <td><span style="color: var(--success); font-weight: 600; font-size: 0.8rem;">Low</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-        </main>
-    </body>
+    </main>
+</body>
+
 </html>
