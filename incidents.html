@@ -21,127 +21,94 @@
         <a class="navitem" href="index.html">Log Out</a>
     </nav>
 
-    <main class="dashboard">
+    <div class="dashboard">
 
         <!-- Summary Section -->
-        <section style="grid-column: span 12; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
-            <div class="events total">
-                <p class="label">Open Incidents</p>
+        <div class="full-width events-group">
+            <div class="event-box">
+                <p>Open Incidents</p>
                 <h3>42</h3>
-                <div class="stat-indicator"></div>
             </div>
-            <div class="events high">
-                <p class="label">Critical</p>
-                <h3>5</h3>
-                <div class="stat-indicator"></div>
+            <div class="event-box">
+                <p>Critical</p>
+                <h3 class="text-red">5</h3>
             </div>
-            <div class="events medium">
-                <p class="label">In Progress</p>
-                <h3>12</h3>
-                <div class="stat-indicator"></div>
+            <div class="event-box">
+                <p>In Progress</p>
+                <h3 class="text-orange">12</h3>
             </div>
-            <div class="events alerts">
-                <p class="label">Resolved (Today)</p>
-                <h3>8</h3>
-                <div class="stat-indicator"></div>
+            <div class="event-box">
+                <p>Resolved</p>
+                <h3 class="text-green">8</h3>
             </div>
-        </section>
+        </div>
 
         <!-- Main Incidents Table -->
-        <section class="card full" style="min-height: 500px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                <h2>All Incidents</h2>
-            </div>
+        <div class="card full-width">
+            <h2>All Incidents</h2>
 
             <table>
-                <thead>
-                    <tr>
-                        <th style="width: 80px;">ID</th>
-                        <th>Severity</th>
-                        <th style="width: 180px;">Time</th>
-                        <th>Source</th>
-                        <th>Description</th>
-                        <th>Status</th>
-                        <th>Assignee</th>
-                        <th style="text-align: right;">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="font-family: monospace; color: var(--text-muted);">#INC-204</td>
-                        <td><span class="alert-tag tag-high">Critical</span></td>
-                        <td style="color: var(--text-muted); font-size: 0.85rem;">2024-04-24 16:43:32</td>
-                        <td style="color: var(--primary);">192.168.1.20</td>
-                        <td>Multiple failed login attempts (Root)</td>
-                        <td><span
-                                style="color: var(--warning); font-size: 0.85rem; font-weight: 500;">Investigating</span>
-                        </td>
-                        <td style="color: var(--text-muted);">Sarah J.</td>
-                        <td style="text-align: right;"><button class="btn-outline"
-                                style="padding: 2px 8px; font-size: 0.75rem;">View</button></td>
-                    </tr>
-                    <tr>
-                        <td style="font-family: monospace; color: var(--text-muted);">#INC-203</td>
-                        <td><span class="alert-tag tag-medium">Medium</span></td>
-                        <td style="color: var(--text-muted); font-size: 0.85rem;">2024-04-24 15:12:05</td>
-                        <td style="color: var(--primary);">10.0.0.17</td>
-                        <td>Suspicious outbound traffic (Port 4444)</td>
-                        <td><span style="color: var(--success); font-size: 0.85rem; font-weight: 500;">New</span></td>
-                        <td style="color: var(--text-muted);">-</td>
-                        <td style="text-align: right;"><button class="btn-outline"
-                                style="padding: 2px 8px; font-size: 0.75rem;">View</button></td>
-                    </tr>
-                    <tr>
-                        <td style="font-family: monospace; color: var(--text-muted);">#INC-202</td>
-                        <td><span class="alert-tag tag-high">High</span></td>
-                        <td style="color: var(--text-muted); font-size: 0.85rem;">2024-04-24 14:55:21</td>
-                        <td style="color: var(--primary);">203.0.113.42</td>
-                        <td>New admin account created</td>
-                        <td><span
-                                style="color: var(--text-muted); font-size: 0.85rem; font-weight: 500;">Resolved</span>
-                        </td>
-                        <td style="color: var(--text-muted);">Mike R.</td>
-                        <td style="text-align: right;"><button class="btn-outline"
-                                style="padding: 2px 8px; font-size: 0.75rem;">View</button></td>
-                    </tr>
-                    <tr>
-                        <td style="font-family: monospace; color: var(--text-muted);">#INC-201</td>
-                        <td><span class="alert-tag"
-                                style="background: rgba(16, 185, 129, 0.1); color: var(--success); border: 1px solid rgba(16, 185, 129, 0.2);">Low</span>
-                        </td>
-                        <td style="color: var(--text-muted); font-size: 0.85rem;">2024-04-24 13:20:10</td>
-                        <td style="color: var(--primary);">192.168.1.50</td>
-                        <td>Policy violation: Non-standard port</td>
-                        <td><span style="color: var(--text-muted); font-size: 0.85rem; font-weight: 500;">Closed</span>
-                        </td>
-                        <td style="color: var(--text-muted);">System</td>
-                        <td style="text-align: right;"><button class="btn-outline"
-                                style="padding: 2px 8px; font-size: 0.75rem;">View</button></td>
-                    </tr>
-                    <tr>
-                        <td style="font-family: monospace; color: var(--text-muted);">#INC-200</td>
-                        <td><span class="alert-tag tag-medium">Medium</span></td>
-                        <td style="color: var(--text-muted); font-size: 0.85rem;">2024-04-24 11:05:43</td>
-                        <td style="color: var(--primary);">172.16.0.55</td>
-                        <td>Malware signature detected</td>
-                        <td><span
-                                style="color: var(--warning); font-size: 0.85rem; font-weight: 500;">Investigating</span>
-                        </td>
-                        <td style="color: var(--text-muted);">Sarah J.</td>
-                        <td style="text-align: right;"><button class="btn-outline"
-                                style="padding: 2px 8px; font-size: 0.75rem;">View</button></td>
-                    </tr>
-                </tbody>
+                <tr>
+                    <th>ID</th>
+                    <th>Severity</th>
+                    <th>Time</th>
+                    <th>Source</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Assignee</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>#INC-204</td>
+                    <td class="text-red">Critical</td>
+                    <td>16:43:32</td>
+                    <td>192.168.1.20</td>
+                    <td>Multiple failed login attempts</td>
+                    <td class="text-orange">Investigating</td>
+                    <td>Sarah J.</td>
+                    <td><button class="btn-outline">View</button></td>
+                </tr>
+                <tr>
+                    <td>#INC-203</td>
+                    <td class="text-orange">Medium</td>
+                    <td>15:12:05</td>
+                    <td>10.0.0.17</td>
+                    <td>Suspicious outbound traffic</td>
+                    <td class="text-green">New</td>
+                    <td>-</td>
+                    <td><button class="btn-outline">View</button></td>
+                </tr>
+                <tr>
+                    <td>#INC-202</td>
+                    <td class="text-red">High</td>
+                    <td>14:55:21</td>
+                    <td>203.0.113.42</td>
+                    <td>New admin account created</td>
+                    <td>Resolved</td>
+                    <td>Mike R.</td>
+                    <td><button class="btn-outline">View</button></td>
+                </tr>
+                <tr>
+                    <td>#INC-201</td>
+                    <td class="text-green">Low</td>
+                    <td>13:20:10</td>
+                    <td>192.168.1.50</td>
+                    <td>Policy violation</td>
+                    <td>Closed</td>
+                    <td>System</td>
+                    <td><button class="btn-outline">View</button></td>
+                </tr>
             </table>
 
             <!-- Pagination -->
-            <div
-                style="display: flex; justify-content: flex-end; align-items: center; margin-top: 20px; gap: 10px; color: var(--text-muted); font-size: 0.9rem;">
-                <span>Page 1 of 5</span>
-                <button class="btn-outline" style="padding: 4px 8px;">&lt;</button>
-                <button class="btn-outline" style="padding: 4px 8px;">&gt;</button>
+            <div style="margin-top: 20px; text-align: right;">
+                <span style="margin-right: 10px; color: #94A3B8;">Page 1 of 5</span>
+                <button class="btn-outline">&lt;</button>
+                <button class="btn-outline">&gt;</button>
             </div>
-        </section>
+        </div>
+
+    </div>
 
     </main>
 </body>

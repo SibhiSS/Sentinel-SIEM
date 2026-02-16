@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sentinel SIEM</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com">
@@ -13,7 +11,7 @@
 
     <nav class="navbar">
         <a class="navlogo" href="#">
-            <img src="Sentinel Logo oonly.png" alt="Sentinel SIEM" width="100" height="30">
+            <img src="Sentinel Logo oonly.png" alt="Sentinel">
         </a>
         <a class="navitem active" href="#">Dashboard</a>
         <a class="navitem" href="incidents.html">Incidents</a>
@@ -21,154 +19,121 @@
         <a class="navitem" href="index.html">Log Out</a>
     </nav>
 
-    <main class="dashboard">
+    <div class="dashboard">
 
-        <section class="card-upload">
-            <h2>
-                Upload Log file
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                    <polyline points="17 8 12 3 7 8" />
-                    <line x1="12" y1="3" x2="12" y2="15" />
-                </svg>
-            </h2>
-            <div class="upload-box">
-                <p>Drag & Drop your log file here</p>
-                <p style="font-size: 0.8rem; opacity: 0.7;">OR</p>
-                <button class="btn-outline">Browse Files</button>
+        <!-- Upload Section -->
+        <div class="card-upload card">
+            <h2>Upload Log</h2>
+            <div class="upload-area">
+                <p>Drag files here</p>
+                <br>
+                <button class="btn-outline">Browse</button>
             </div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                <p style="font-size: 0.8rem; color: var(--text-muted);">Supported: .log, .txt, .csv</p>
-                <button class="btn-primary" style="width: auto;">Upload</button>
-            </div>
-        </section>
-
-        <div class="events-group">
-            <section class="events total">
-                <p class="label">Total Events</p>
-                <h3>12,543</h3>
-                <div class="stat-indicator"></div>
-            </section>
-            <section class="events high">
-                <p class="label">High Severity</p>
-                <h3>142</h3>
-                <div class="stat-indicator"></div>
-            </section>
-            <section class="events medium">
-                <p class="label">Medium Severity</p>
-                <h3>856</h3>
-                <div class="stat-indicator"></div>
-            </section>
-            <section class="events alerts">
-                <p class="label">Active Alerts</p>
-                <h3>24</h3>
-                <div class="stat-indicator"></div>
-            </section>
+            <button class="btn-blue">Upload File</button>
         </div>
 
-        <section class="card wide">
-            <h2>
-                Event Trend
-                <span style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted);">Last 24 Hours</span>
-            </h2>
-            <div class="css-chart">
-
+        <!-- Quick Stats -->
+        <div class="events-group">
+            <div class="event-box">
+                <p>Total Events</p>
+                <h3>12,543</h3>
             </div>
-        </section>
+            <div class="event-box">
+                <p>High Severity</p>
+                <h3 class="text-red">142</h3>
+            </div>
+            <div class="event-box">
+                <p>Alerts</p>
+                <h3 class="text-orange">24</h3>
+            </div>
+        </div>
 
-        <section class="card narrow">
-            <h2>Top Event Categories</h2>
-            <ul class="legend">
-                <li><span><span class="legend-dot" style="background: var(--primary);"></span>Authentication</span>
-                    <span>45%</span>
-                </li>
-                <li><span><span class="legend-dot" style="background: var(--accent);"></span>Network</span>
-                    <span>30%</span>
-                </li>
-                <li><span><span class="legend-dot" style="background: var(--success);"></span>System</span>
-                    <span>15%</span>
-                </li>
-                <li><span><span class="legend-dot" style="background: var(--danger);"></span>Malware</span>
-                    <span>5%</span>
-                </li>
-                <li><span><span class="legend-dot" style="background: var(--warning);"></span>Access</span>
-                    <span>5%</span>
-                </li>
+        <!-- Chart -->
+        <div class="card wide">
+            <h2>Event Trend</h2>
+            <div class="chart-container">
+                <div class="chart-bar" style="height: 40%"></div>
+                <div class="chart-bar" style="height: 70%"></div>
+                <div class="chart-bar" style="height: 50%"></div>
+                <div class="chart-bar" style="height: 80%"></div>
+                <div class="chart-bar" style="height: 30%"></div>
+                <div class="chart-bar" style="height: 60%"></div>
+                <div class="chart-bar" style="height: 90%"></div>
+            </div>
+        </div>
+
+        <!-- Lists -->
+        <div class="card">
+            <h2>Top Categories</h2>
+            <ul class="simple-list">
+                <li>Authentication <span>45%</span></li>
+                <li>Network <span>30%</span></li>
+                <li>System <span>15%</span></li>
+                <li>Malware <span>5%</span></li>
             </ul>
-        </section>
+        </div>
 
-        <section class="card narrow">
-            <h2>Top Source IPs</h2>
-            <ul class="ip-list">
-                <li><span>192.168.1.10</span><span>245 events</span></li>
-                <li><span>10.0.0.7</span><span>180 events</span></li>
-                <li><span>203.0.113.42</span><span>132 events</span></li>
-                <li><span>172.16.0.55</span><span>98 events</span></li>
-                <li><span>10.20.1.5</span><span>45 events</span></li>
+        <div class="card">
+            <h2>Top IPs</h2>
+            <ul class="simple-list">
+                <li>192.168.1.10 <span>245</span></li>
+                <li>10.0.0.7 <span>180</span></li>
+                <li>203.0.113.42 <span>132</span></li>
             </ul>
-        </section>
+        </div>
 
-        <section class="card wide">
+        <!-- Alerts -->
+        <div class="card wide">
             <h2>Detected Alerts</h2>
-            <div class="alert-item">
-                <span class="alert-time">13:34:32</span>
-                <span>Multiple failed login attempts from standard user account</span>
-                <span class="alert-tag tag-high">High</span>
-            </div>
-            <div class="alert-item">
-                <span class="alert-time">14:55:21</span>
-                <span>Suspicious outbound traffic detected on port 4444</span>
-                <span class="alert-tag tag-medium">Medium</span>
-            </div>
-            <div class="alert-item">
-                <span class="alert-time">15:12:05</span>
-                <span>New admin account created outside business hours</span>
-                <span class="alert-tag tag-high">High</span>
-            </div>
-        </section>
+            <ul class="simple-list">
+                <li>
+                    <span>13:34:32 - Failed login</span>
+                    <span class="text-red">High</span>
+                </li>
+                <li>
+                    <span>14:55:21 - Suspicious traffic</span>
+                    <span class="text-orange">Medium</span>
+                </li>
+                <li>
+                    <span>15:12:05 - New admin user</span>
+                    <span class="text-red">High</span>
+                </li>
+            </ul>
+        </div>
 
-        <section class="card full">
+        <!-- Recent Logs Table -->
+        <div class="card full-width">
             <h2>Recent Log Entries</h2>
             <table>
-                <thead>
-                    <tr>
-                        <th style="width: 200px;">Time</th>
-                        <th>Source IP</th>
-                        <th>Event</th>
-                        <th>Severity</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="color: var(--text-muted); font-family: monospace;">2024-04-24 16:43:32</td>
-                        <td style="font-family: monospace; color: var(--primary);">192.168.1.20</td>
-                        <td>Failed password for root</td>
-                        <td><span class="alert-tag tag-high">High</span></td>
-                    </tr>
-                    <tr>
-                        <td style="color: var(--text-muted); font-family: monospace;">2024-04-24 16:44:12</td>
-                        <td style="font-family: monospace; color: var(--primary);">10.0.0.17</td>
-                        <td>Connection reset by peer</td>
-                        <td><span class="alert-tag tag-medium">Medium</span></td>
-                    </tr>
-                    <tr>
-                        <td style="color: var(--text-muted); font-family: monospace;">2024-04-24 16:45:01</td>
-                        <td style="font-family: monospace; color: var(--primary);">203.0.113.11</td>
-                        <td>Invalid user admin from 203.0.113.11</td>
-                        <td><span class="alert-tag tag-high">High</span></td>
-                    </tr>
-                    <tr>
-                        <td style="color: var(--text-muted); font-family: monospace;">2024-04-24 16:48:55</td>
-                        <td style="font-family: monospace; color: var(--primary);">192.168.1.50</td>
-                        <td>Accepted publickey for ubuntu</td>
-                        <td><span style="color: var(--success); font-weight: 600; font-size: 0.8rem;">Low</span></td>
-                    </tr>
-                </tbody>
+                <tr>
+                    <th>Time</th>
+                    <th>Source IP</th>
+                    <th>Event</th>
+                    <th>Severity</th>
+                </tr>
+                <tr>
+                    <td>16:43:32</td>
+                    <td>192.168.1.20</td>
+                    <td>Failed password</td>
+                    <td class="text-red">High</td>
+                </tr>
+                <tr>
+                    <td>16:44:12</td>
+                    <td>10.0.0.17</td>
+                    <td>Connection reset</td>
+                    <td class="text-orange">Medium</td>
+                </tr>
+                <tr>
+                    <td>16:45:01</td>
+                    <td>203.0.113.11</td>
+                    <td>Invalid user</td>
+                    <td class="text-red">High</td>
+                </tr>
             </table>
-        </section>
+        </div>
 
-    </main>
+    </div>
+
 </body>
 
 </html>

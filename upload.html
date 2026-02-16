@@ -21,38 +21,25 @@
         <a class="navitem" href="index.html">Log Out</a>
     </nav>
 
-    <main class="dashboard" style="display: flex; justify-content: center; align-items: center; min-height: 80vh;">
+    <div class="dashboard">
 
-        <section class="card-upload" style="width: 100%; max-width: 600px; grid-column: auto;">
-            <h2>
-                Upload Log file
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                    <polyline points="17 8 12 3 7 8" />
-                    <line x1="12" y1="3" x2="12" y2="15" />
-                </svg>
-            </h2>
-            <div class="upload-box" style="padding: 3rem;">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem; opacity: 0.8;">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                    <polyline points="17 8 12 3 7 8" />
-                    <line x1="12" y1="3" x2="12" y2="15" />
-                </svg>
-                <p style="font-size: 1.1rem; color: var(--text-main);">Drag & Drop your log file here</p>
-                <p style="font-size: 0.9rem; opacity: 0.6; margin: 0.5rem 0 1.5rem 0;">Supported formats: .log, .txt,
-                    .csv</p>
-                <button class="btn-outline" style="padding: 0.6rem 1.2rem;">Browse Files</button>
+        <!-- Upload Card -->
+        <div class="card card-upload full-width" style="max-width: 600px; margin: 0 auto; grid-column: span 3;">
+            <h2>Upload Log</h2>
+            <div class="upload-area">
+                <p>Drag & Drop files</p>
+                <div style="margin: 20px 0;">Or</div>
+                <button class="btn-outline">Browse Computer</button>
             </div>
 
+            <p style="text-align: center; color: #94A3B8; margin-bottom: 20px;">.log, .txt, .csv</p>
 
-            <div style="display: flex; justify-content: flex-end; margin-top: 2rem;">
-                <button class="btn-primary" style="width: auto; padding: 0.8rem 2rem;">Upload & Analyze</button>
+            <div style="text-align: right;">
+                <button class="btn-blue">Start Analysis</button>
             </div>
-        </section>
+        </div>
 
-    </main>
+    </div>
 </body>
 
 </html>
